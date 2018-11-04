@@ -1,14 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PackageId>MbeatAPI</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Martin Boyakhchyan</Authors>
+    <Company>BMBY Software Systems Ltd.</Company>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Rest\" />
+    <Folder Include="Enumerations\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="RestSharp" Version="106.5.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mbeat.Entities\Mbeat.Entities.csproj" />

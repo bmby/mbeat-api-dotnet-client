@@ -9,17 +9,17 @@ namespace Mbeat
         private const string EndPoint = "https://mbeat.bmby.com/api";
 
         private ClientsRest _clients;
-        private PropertiesRest _properties;
         private OwnersRest _owners;
         private CrmTasksRest _crmTasks;
 
         private readonly string _endPoint;
+        private readonly AuthParams _authParams;
 
-        public MbeatClient() : this(EndPoint)
+        public MbeatClient(AuthParams authParams) : this(EndPoint, authParams)
         {
         }
 
-        public MbeatClient(string endPoint)
+        public MbeatClient(string endPoint, AuthParams authParams)
         {
             if (string.IsNullOrEmpty(endPoint))
             {
@@ -27,6 +27,7 @@ namespace Mbeat
             }
 
             _endPoint = endPoint;
+            _authParams = authParams;
         }
 
         public ClientsRest Clients
@@ -35,23 +36,10 @@ namespace Mbeat
             {
                 if (_clients == null)
                 {
-                    _clients = new ClientsRest(_endPoint);
+                    _clients = new ClientsRest(_endPoint, _authParams);
                 }
 
                 return _clients;
-            }
-        }
-
-        public PropertiesRest Properties 
-        {
-            get
-            {
-                if (_properties == null)
-                {
-                    _properties = new PropertiesRest(_endPoint);
-                }
-
-                return _properties;
             }
         }
 
@@ -61,7 +49,7 @@ namespace Mbeat
             {
                 if (_owners == null)
                 {
-                    _owners = new OwnersRest(_endPoint);
+                    _owners = new OwnersRest(_endPoint, _authParams);
                 }
 
                 return _owners;
@@ -74,7 +62,7 @@ namespace Mbeat
             {
                 if (_crmTasks == null)
                 {
-                    _crmTasks = new CrmTasksRest(_endPoint);
+                    _crmTasks = new CrmTasksRest(_endPoint, _authParams);
                 }
 
                 return _crmTasks;
