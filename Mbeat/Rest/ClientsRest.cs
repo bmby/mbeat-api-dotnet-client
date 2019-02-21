@@ -6,7 +6,7 @@ namespace Mbeat.Rest
 {
     public class ClientsRest : MbeatRest
     {
-        public ClientsRest(string endPoint, AuthParams authParams) : base(endPoint, authParams)
+        public ClientsRest(string baseUrl, AuthParams authParams) : base(baseUrl, authParams)
         {
         }
 

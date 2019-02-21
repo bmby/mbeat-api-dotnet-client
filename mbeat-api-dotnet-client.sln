@@ -1,9 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mbeat.Entities", "Mbeat.Entities\Mbeat.Entities.csproj", "{158B6177-96C6-4BBA-8C23-4570B6EF7F3F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mbeat", "Mbeat\Mbeat.csproj", "{6C99D639-AB8E-4FA8-83D9-5CA6AF4196EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{5132AB66-2D02-44EB-841A-B154EE2D980C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{158B6177-96C6-4BBA-8C23-4570B6EF7F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{158B6177-96C6-4BBA-8C23-4570B6EF7F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{158B6177-96C6-4BBA-8C23-4570B6EF7F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{158B6177-96C6-4BBA-8C23-4570B6EF7F3F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6C99D639-AB8E-4FA8-83D9-5CA6AF4196EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6C99D639-AB8E-4FA8-83D9-5CA6AF4196EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C99D639-AB8E-4FA8-83D9-5CA6AF4196EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C99D639-AB8E-4FA8-83D9-5CA6AF4196EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5132AB66-2D02-44EB-841A-B154EE2D980C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5132AB66-2D02-44EB-841A-B154EE2D980C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5132AB66-2D02-44EB-841A-B154EE2D980C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5132AB66-2D02-44EB-841A-B154EE2D980C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

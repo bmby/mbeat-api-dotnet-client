@@ -1,22 +1,27 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Mbeat/TokenResponse.cs">
+﻿<Properties StartupConfiguration="{5132AB66-2D02-44EB-841A-B154EE2D980C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mbeat/Rest/BmbyhoodRest.cs">
     <Files>
-      <File FileName="Mbeat/Rest/MbeatRest.cs" Line="37" Column="72" />
-      <File FileName="Mbeat.Entities/Client.cs" Line="40" Column="30" />
-      <File FileName="Mbeat.Entities/CrmTask.cs" Line="8" Column="40" />
-      <File FileName="Mbeat.Entities/Owner.cs" Line="72" Column="30" />
-      <File FileName="Mbeat/MbeatClient.cs" Line="45" Column="1" />
-      <File FileName="Mbeat/Rest/ClientsRest.cs" Line="27" Column="1" />
-      <File FileName="Mbeat/Rest/CrmTasksRest.cs" Line="27" Column="1" />
-      <File FileName="Mbeat/Rest/OwnersRest.cs" Line="25" Column="35" />
-      <File FileName="Mbeat/TokenResponse.cs" Line="9" Column="9" />
-      <File FileName="Mbeat/Enumerations/OAuthGrantType.cs" Line="4" Column="39" />
+      <File FileName="Mbeat/Rest/BmbyhoodRest.cs" Line="24" Column="1" />
+      <File FileName="Test/Program.cs" Line="33" Column="1" />
+      <File FileName="Mbeat/Rest/MbeatRest.cs" Line="76" Column="1" />
+      <File FileName="Mbeat/MbeatClient.cs" Line="42" Column="42" />
+      <File FileName="Mbeat/Rest/ClientsRest.cs" Line="7" Column="39" />
+      <File FileName="Mbeat/Entities/SmsMessage.cs" Line="11" Column="1" />
+      <File FileName="Mbeat/Entities/EmailMessage.cs" Line="4" Column="39" />
+      <File FileName="Mbeat/Entities/CrmTask.cs" Line="6" Column="31" />
+      <File FileName="Mbeat/Entities/EmailAddress.cs" Line="9" Column="2" />
+      <File FileName="Mbeat/Entities/BmbyhoodSmsMessage.cs" Line="9" Column="1" />
+      <File FileName="Mbeat/Entities/BmbyhoodEmailMessage.cs" Line="6" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/martin/Projects/mbeat-api-dotnet-client/Test/Program.cs" relfile="Test/Program.cs" line="37" column="17" />
+      <Breakpoint file="/Users/martin/Projects/mbeat-api-dotnet-client/Test/Program.cs" relfile="Test/Program.cs" line="33" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

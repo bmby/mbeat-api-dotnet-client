@@ -4,6 +4,8 @@ using RestSharp;
 using Newtonsoft.Json;
 using System.Net;
 using Mbeat.Enumerations;
+using System.Linq;
+using Newtonsoft.Json.Serialization;
 
 namespace Mbeat.Rest
 {
@@ -22,11 +24,17 @@ namespace Mbeat.Rest
 
             if (_accessToken == string.Empty || timestamp - 60 > _accessTokenExpiration)
             {
-
                 var client = new RestClient(TokenEndpoint);
                 var request = new RestRequest(Method.POST);
                 request.AddHeader("content-type", "application/x-www-form-urlencoded");
-                request.AddParameter("application/x-www-form-urlencoded", $"client_id={_authParams.ClientId}&client_secret={_authParams.ClientSecret}&grant_type={OAuthGrantType.ClientCredentials}", ParameterType.RequestBody);
+
+                string data = string.Empty;
+                data += $"client_id={_authParams.ClientId}";
+                data += $"&client_secret={_authParams.ClientSecret}";
+                data += $"&grant_type={OAuthGrantType.ClientCredentials}";
+                data += $"&scope={string.Join(" ", _authParams.Scopes)}";
+
+                request.AddParameter("application/x-www-form-urlencoded", data, ParameterType.RequestBody);
                 IRestResponse response = client.Execute(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
@@ -43,7 +51,7 @@ namespace Mbeat.Rest
             return _accessToken;
         }
 
-        private IRestResponse Request(string method, string uri, Entity entity)
+        private IRestResponse Request(Method method, string uri, Entity entity)
         {
             var restRequest = new RestRequest(method)
             {
@@ -51,11 +59,16 @@ namespace Mbeat.Rest
             };
 
             restRequest.AddHeader("content-type", "application/json");
-            restRequest.AddHeader("Authorization", "Bearer " + _accessToken);
+            restRequest.AddHeader("Authorization", "Bearer " + GetAccessToken());
 
             if (entity != null)
             {
-                restRequest.AddParameter("application/json", JsonConvert.SerializeObject(entity), ParameterType.RequestBody);
+                restRequest.AddParameter("application/json", 
+                                         JsonConvert.SerializeObject(entity, new JsonSerializerSettings
+                                         {
+                                             ContractResolver = new CamelCasePropertyNamesContractResolver()
+                                         }), 
+                                         ParameterType.RequestBody);
             }
 
             IRestResponse response = _restClient.Execute(restRequest);
@@ -65,22 +78,22 @@ namespace Mbeat.Rest
 
         protected IRestResponse Post(string uri, Entity entity)
         {
-            return Request("POST", uri, entity);
+            return Request(Method.POST, uri, entity);
         }
 
         protected IRestResponse Put(string uri, Entity entity)
         {
-            return Request("PUT", uri, entity);
+            return Request(Method.PUT, uri, entity);
         }
 
         protected IRestResponse Delete(string uri)
         {
-            return Request("DELETE", uri, null);
+            return Request(Method.DELETE, uri, null);
         }
 
-        public MbeatRest(string endPoint, AuthParams authParams)
+        public MbeatRest(string baseUrl, AuthParams authParams)
         {
-            _restClient = new RestClient(endPoint);
+            _restClient = new RestClient(baseUrl);
             _authParams = authParams;
         }
     }

@@ -6,7 +6,7 @@ namespace Mbeat.Rest
 {
     public class CrmTasksRest : MbeatRest
     {
-        public CrmTasksRest(string endPoint, AuthParams authParams) : base(endPoint, authParams)
+        public CrmTasksRest(string baseUrl, AuthParams authParams) : base(baseUrl, authParams)
         {
         }
 

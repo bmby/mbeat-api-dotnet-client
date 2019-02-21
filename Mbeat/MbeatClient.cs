@@ -6,27 +6,30 @@ namespace Mbeat
 {
     public class MbeatClient
     {
-        private const string EndPoint = "https://mbeat.bmby.com/api";
+        private const string BaseUrl = "https://mbeat.bmby.com/api";
 
         private ClientsRest _clients;
         private OwnersRest _owners;
         private CrmTasksRest _crmTasks;
+        private BmbyhoodRest _bmbyhood;
+        private EmailRest _email;
+        private SmsRest _sms;
 
-        private readonly string _endPoint;
+        private readonly string _baseUrl;
         private readonly AuthParams _authParams;
 
-        public MbeatClient(AuthParams authParams) : this(EndPoint, authParams)
+        public MbeatClient(AuthParams authParams) : this(BaseUrl, authParams)
         {
         }
 
-        public MbeatClient(string endPoint, AuthParams authParams)
+        public MbeatClient(string baseUrl, AuthParams authParams)
         {
-            if (string.IsNullOrEmpty(endPoint))
+            if (string.IsNullOrEmpty(baseUrl))
             {
                 throw new Exception("endpoint argument is null or empty");
             }
 
-            _endPoint = endPoint;
+            _baseUrl = baseUrl;
             _authParams = authParams;
         }
 
@@ -36,7 +39,7 @@ namespace Mbeat
             {
                 if (_clients == null)
                 {
-                    _clients = new ClientsRest(_endPoint, _authParams);
+                    _clients = new ClientsRest(_baseUrl, _authParams);
                 }
 
                 return _clients;
@@ -49,7 +52,7 @@ namespace Mbeat
             {
                 if (_owners == null)
                 {
-                    _owners = new OwnersRest(_endPoint, _authParams);
+                    _owners = new OwnersRest(_baseUrl, _authParams);
                 }
 
                 return _owners;
@@ -62,10 +65,49 @@ namespace Mbeat
             {
                 if (_crmTasks == null)
                 {
-                    _crmTasks = new CrmTasksRest(_endPoint, _authParams);
+                    _crmTasks = new CrmTasksRest(_baseUrl, _authParams);
                 }
 
                 return _crmTasks;
+            }
+        }
+
+        public BmbyhoodRest Bmbyhood
+        {
+            get
+            {
+                if (_bmbyhood == null)
+                {
+                    _bmbyhood = new BmbyhoodRest(_baseUrl, _authParams);
+                }
+
+                return _bmbyhood;
+            }
+        }
+
+        public SmsRest Sms
+        {
+            get
+            {
+                if (_sms == null)
+                {
+                    _sms = new SmsRest(_baseUrl, _authParams);
+                }
+
+                return _sms;
+            }
+        }
+
+        public EmailRest Email
+        {
+            get
+            {
+                if (_email == null)
+                {
+                    _email = new EmailRest(_baseUrl, _authParams);
+                }
+
+                return _email;
             }
         }
     }
