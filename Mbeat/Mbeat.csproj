@@ -20,6 +20,9 @@
     <Folder Include="Rest\" />
     <Folder Include="Enumerations\" />
     <Folder Include="Entities\" />
+    <Folder Include="QueryParams\" />
+    <Folder Include="Rest\Interface\" />
+    <Folder Include="Rest\Response\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Collections" Version="4.3.0" />

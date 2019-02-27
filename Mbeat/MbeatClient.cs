@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Mbeat.Rest;
+using Mbeat.Rest.Interface;
 
 namespace Mbeat
 {
@@ -14,6 +15,7 @@ namespace Mbeat
         private BmbyhoodRest _bmbyhood;
         private EmailRest _email;
         private SmsRest _sms;
+        private DreamsRest _dreams;
 
         private readonly string _baseUrl;
         private readonly AuthParams _authParams;
@@ -31,6 +33,19 @@ namespace Mbeat
 
             _baseUrl = baseUrl;
             _authParams = authParams;
+        }
+
+        public DreamsRest Dreams
+        {
+            get
+            {
+                if (_dreams == null)
+                {
+                    _dreams = new DreamsRest(_baseUrl, _authParams);
+                }
+
+                return _dreams;
+            }
         }
 
         public ClientsRest Clients

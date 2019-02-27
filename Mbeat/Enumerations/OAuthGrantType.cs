@@ -11,9 +11,13 @@ namespace Mbeat.Enumerations
             _value = value;
         }
 
-        public static readonly OAuthGrantType ClientCredentials = new OAuthGrantType("client_credentials");
-        public static readonly OAuthGrantType RefreshToken = new OAuthGrantType("refresh_token");
-        public static readonly OAuthGrantType Password = new OAuthGrantType("password");
+        public const string CLIENT_CREDENTIALS = "client_credentials";
+        public const string REFRESH_TOKEN = "refresh_token";
+        public const string PASSWORD = "password";
+
+        public static readonly OAuthGrantType ClientCredentials = new OAuthGrantType(CLIENT_CREDENTIALS);
+        public static readonly OAuthGrantType RefreshToken = new OAuthGrantType(REFRESH_TOKEN);
+        public static readonly OAuthGrantType Password = new OAuthGrantType(PASSWORD);
 
         public override string ToString()
         {
