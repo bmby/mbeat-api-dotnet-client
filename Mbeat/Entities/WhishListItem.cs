@@ -1,20 +1,18 @@
 ﻿using System;
 namespace Mbeat.Entities
 {
-    public class WhishListItem : Entity
+    public class WhishListItem : DreamsEntity
     {
         public int PropertyStatusId { get; set; }
         public int PropId { get; set; }
         public int Size { get; set; }
+        public int RoomNum { get; set; }
+        public string PropType { get; set; }
+        public int FloorNum { get; set; }
+        public int BmbyPropId { get; set; }
+        public string EngineId { get; set; }
+        public int PropNum { get; set; }
+        public int Status { get; set; }
+        public float PriceListPrice { get; set; }
     }
 }
-
-
-        //, 'roomNum' => new \Zend\Db\Sql\Predicate\Expression('Appartments.Rooms')
-        //, 'propType' => new \Zend\Db\Sql\Predicate\Expression('AppartmentType.Description')
-        //, 'floorNum' => new \Zend\Db\Sql\Predicate\Expression('__NewProperties.Floor')
-        //, 'bmbyPropId' => new \Zend\Db\Sql\Predicate\Expression('__NewProperties.PropID')
-        //, 'engineId' => new \Zend\Db\Sql\Predicate\Expression('__NewProperties.Engine3DID')
-        //, 'propNum' => new \Zend\Db\Sql\Predicate\Expression('ProjectHouses.HouseNum')
-        //, 'status' => new \Zend\Db\Sql\Predicate\Expression('PropertiesStatus.StatusName')
-        //,'priceListPrice')) ;

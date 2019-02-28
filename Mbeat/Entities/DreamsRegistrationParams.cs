@@ -3,7 +3,7 @@ using Mbeat.Enumerations;
 
 namespace Mbeat.Entities
 {
-    public class DreamsRegistrationParams : Entity
+    public class DreamsRegistrationParams : DreamsEntity
     {
         public string DeviceId { get; set; }
         public DeviceType DeviceType { get; set; }

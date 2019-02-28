@@ -29,4 +29,7 @@
     <PackageReference Include="RestSharp" Version="106.5.4" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Entities\ClientId.cs" />
+  </ItemGroup>
 </Project>

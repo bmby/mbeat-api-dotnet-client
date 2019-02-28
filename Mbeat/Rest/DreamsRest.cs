@@ -18,42 +18,31 @@ namespace Mbeat.Rest
             return Post("/dreams/register-app", regParams);
         }
 
-        public IRestResponse AddToWishList(DreamsRegistrationParams regParams)
+        public IRestResponse AddToWishList(AddToWishListItem item)
         {
-            return Post("/dreams/add-to-wish-list", regParams);
+            return Post("/dreams/add-to-wish-list", item);
         }
 
-        public IRestResponse EmailWishList(DreamsRegistrationParams regParams)
+        public IRestResponse EmailWishList(DreamsEntity clientId)
         {
-            return Post("/dreams/email-wish-list", regParams);
+            return Post("/dreams/email-wish-list", clientId);
         }
 
-        public IRestResponse AddToLog(DreamsRegistrationParams regParams)
+        public IRestResponse AddToLog(DreamsActionLog actionLog)
         {
-            return Post("/dreams/add-to-log", regParams);
+            return Post("/dreams/add-to-log", actionLog);
         }
 
-        public IRestResponse RemoveFromWishList(DreamsRegistrationParams regParams)
+        public IRestResponse RemoveFromWishList(WishListRemoveParams removeParams)
         {
-            return Post("/dreams/remove-from-wish-list", regParams);
+            return Delete("/dreams/remove-from-wish-list", removeParams);
         }
 
-        public IWishListRestResponse WishList(WishListParams queryParams)
+        public IWishListRestResponse GetWishList(WishListParams queryParams)
         {
             var response = Get("/dreams/wish-list", queryParams);
 
             return new WishListResponse(response);
         }
-
-        public IRestResponse Paid(DreamsRegistrationParams regParams)
-        {
-            return Post("/dreams/paid", regParams);
-        }
-
-        public IRestResponse NextPayment(WishListParams regParams)
-        {
-            return Get("/dreams/next-payment", regParams);
-        }
-
     }
 }

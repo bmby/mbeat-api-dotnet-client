@@ -214,9 +214,16 @@ namespace Mbeat.Rest
             return Request(Method.PUT, uri, entity);
         }
 
+        protected IRestResponse Delete(string uri, Params queryParams)
+        {
+            string url = uri + (queryParams != null ? "?" + queryParams.QueryString : "");
+
+            return Request(Method.DELETE, url, null);
+        }
+
         protected IRestResponse Delete(string uri)
         {
-            return Request(Method.DELETE, uri, null);
+            return Delete(uri, null);
         }
 
         public MbeatRest(string baseUrl, AuthParams authParams)
