@@ -1,36 +1,42 @@
 ﻿<Properties StartupConfiguration="{5132AB66-2D02-44EB-841A-B154EE2D980C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Mbeat/QueryParams/WishListRemoveParams.cs">
+  <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mbeat/Rest/BmbyhoodRest.cs">
     <Files>
-      <File FileName="Mbeat/Entities/AddToWishListItem.cs" Line="9" Column="1" />
-      <File FileName="Mbeat/Rest/DreamsRest.cs" Line="47" Column="1" />
-      <File FileName="Mbeat/Entities/WhishListItem.cs" Line="4" Column="46" />
-      <File FileName="Mbeat/Entities/BmbyhoodEmailMessage.cs" Line="6" Column="15" />
-      <File FileName="Mbeat/Entities/ClientId.cs" Line="6" Column="15" />
-      <File FileName="Mbeat/Entities/DreamsActionLog.cs" Line="4" Column="48" />
-      <File FileName="Mbeat/Entities/DreamsEntity.cs" Line="4" Column="27" />
-      <File FileName="Mbeat/Entities/DreamsRegistrationParams.cs" Line="6" Column="18" />
-      <File FileName="Mbeat/QueryParams/WishListParams.cs" Line="4" Column="41" />
-      <File FileName="Mbeat/QueryParams/WishListRemoveParams.cs" Line="4" Column="18" />
+      <File FileName="Mbeat/Entities/ClientReactionOnProperty.cs" Line="1" Column="1" />
+      <File FileName="Mbeat/Enumerations/ClientReaction.cs" />
+      <File FileName="Mbeat/Enumerations/DeviceType.cs" />
+      <File FileName="Mbeat/Rest/BmbyhoodRest.cs" Line="1" Column="1" />
+      <File FileName="Test/Program.cs" />
+      <File FileName="Mbeat/Rest/MbeatRest.cs" />
+      <File FileName="Mbeat/Rest/ClientsRest.cs" />
+      <File FileName="Mbeat/Rest/OwnersRest.cs" />
+      <File FileName="Mbeat/Entities/BmbyhoodSmsMessage.cs" />
+      <File FileName="Mbeat/Entities/SmsMessage.cs" />
+      <File FileName="Mbeat/Entities/Owner.cs" />
+      <File FileName="Mbeat/Rest/SmsRest.cs" />
     </Files>
     <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>contact.ContactId</Value>
-          <Value>entity.PropertyId</Value>
-          <Value>property.PropertyId</Value>
-          <Value>property.BmbyOwnersPropertyId</Value>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="mbeat-api-dotnet-client" expanded="True" selected="True">
+            <Node name="Mbeat" expanded="True">
+              <Node name="Entities" expanded="True" />
+              <Node name="Rest" expanded="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/martin/Projects/mbeat-api-dotnet-client/Test/Program.cs" relfile="Test/Program.cs" line="37" column="17" />
-      <Breakpoint file="/Users/martin/Projects/mbeat-api-dotnet-client/Test/Program.cs" relfile="Test/Program.cs" line="33" column="1" />
+      <Breakpoint file="/Users/martin/Projects/mbeat-api-dotnet-client/Test/Program.cs" relfile="Test/Program.cs" line="40" column="17" />
+      <Breakpoint file="/Users/martin/Projects/mbeat-api-dotnet-client/Test/Program.cs" relfile="Test/Program.cs" line="36" column="1" />
+      <Breakpoint file="/Users/martin/Projects/mbeat-api-dotnet-client/Test/Program.cs" relfile="Test/Program.cs" line="23" column="1" />
+      <Breakpoint file="/Users/martin/Projects/mbeat-api-dotnet-client/Mbeat/Rest/MbeatRest.cs" relfile="Mbeat/Rest/MbeatRest.cs" line="192" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

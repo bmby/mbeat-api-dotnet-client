@@ -17,7 +17,17 @@ namespace Mbeat.Rest
 
         public IRestResponse SendSms(BmbyhoodSmsMessage message)
         {
-            return Post("/bmbyhood/sendesms", message);
+            return Post("/bmbyhood/sendsms", message);
+        }
+
+        public IRestResponse AddToContract(BrokerageContractData contractData)
+        {
+            return Post("/bmbyhood/addpropertytoagreement", contractData);
+        }
+
+        public IRestResponse SetClientReaction(ClientReactionOnProperty reaction)
+        {
+            return Post("/bmbyhood/setclientreaction", reaction);
         }
     }
 }

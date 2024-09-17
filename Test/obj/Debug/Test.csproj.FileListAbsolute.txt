@@ -97,14 +97,14 @@
 /Users/martin/Projects/mbeat-api-dotnet-client/Test/bin/Debug/System.Xml.XPath.dll
 /Users/martin/Projects/mbeat-api-dotnet-client/Test/bin/Debug/System.Xml.XPath.XDocument.dll
 /Users/martin/Projects/mbeat-api-dotnet-client/Test/bin/Debug/Mbeat.dll
+/Users/martin/Projects/mbeat-api-dotnet-client/Test/bin/Debug/Newtonsoft.Json.dll
 /Users/martin/Projects/mbeat-api-dotnet-client/Test/bin/Debug/RestSharp.dll
 /Users/martin/Projects/mbeat-api-dotnet-client/Test/bin/Debug/Mbeat.pdb
 /Users/martin/Projects/mbeat-api-dotnet-client/Test/bin/Debug/RestSharp.xml
+/Users/martin/Projects/mbeat-api-dotnet-client/Test/bin/Debug/Newtonsoft.Json.pdb
+/Users/martin/Projects/mbeat-api-dotnet-client/Test/bin/Debug/Newtonsoft.Json.xml
 /Users/martin/Projects/mbeat-api-dotnet-client/Test/obj/Debug/Test.csprojAssemblyReference.cache
 /Users/martin/Projects/mbeat-api-dotnet-client/Test/obj/Debug/Test.csproj.CoreCompileInputs.cache
 /Users/martin/Projects/mbeat-api-dotnet-client/Test/obj/Debug/Test.csproj.CopyComplete
 /Users/martin/Projects/mbeat-api-dotnet-client/Test/obj/Debug/Test.exe
 /Users/martin/Projects/mbeat-api-dotnet-client/Test/obj/Debug/Test.pdb
-/Users/martin/Projects/mbeat-api-dotnet-client/Test/bin/Debug/Newtonsoft.Json.dll
-/Users/martin/Projects/mbeat-api-dotnet-client/Test/bin/Debug/Newtonsoft.Json.pdb
-/Users/martin/Projects/mbeat-api-dotnet-client/Test/bin/Debug/Newtonsoft.Json.xml

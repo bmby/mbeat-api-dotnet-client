@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageId>MbeatAPI</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.5</Version>
     <Authors>Martin Boyakhchyan</Authors>
     <Company>BMBY Software Systems Ltd.</Company>
     <TargetFramework>netstandard2.0</TargetFramework>
