@@ -20,7 +20,7 @@ namespace Mbeat
         {
             if ((!string.IsNullOrEmpty(username) || !string.IsNullOrEmpty(password)) && storage == null)
             {
-                throw new Exception("You must implemet storage for refresh token");
+                throw new Exception("You must implement storage for refresh token");
             }
 
             if ((!string.IsNullOrEmpty(username) || !string.IsNullOrEmpty(password)) && grantType != OAuthGrantType.Password)

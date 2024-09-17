@@ -29,5 +29,10 @@ namespace Mbeat.Rest
         {
             return Post("/bmbyhood/setclientreaction", reaction);
         }
+
+        public IRestResponse SetUserPassword(BmbyhoodUserPassword userPassword)
+        {
+            return Post("/bmbyhood/user-password-hash", userPassword);
+        }
     }
 }
