@@ -1,12 +1,14 @@
 ﻿using System;
-using Mbeat.Entities;
 using RestSharp;
-using Newtonsoft.Json;
 using System.Net;
-using Mbeat.Enumerations;
 using System.Linq;
-using Newtonsoft.Json.Serialization;
+using Mbeat.Entities;
+using Newtonsoft.Json;
 using Mbeat.QueryParams;
+using Mbeat.Enumerations;
+using System.Net.Security;
+using Newtonsoft.Json.Serialization;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Mbeat.Rest
 {
@@ -14,6 +16,7 @@ namespace Mbeat.Rest
     {
         private readonly IRestClient _restClient;
         private readonly AuthParams _authParams;
+        private readonly string _baseUrl;
 
         private const string TokenEndpoint = "https://identity.bmby.com/connect/token";
         private string _accessToken = string.Empty;
@@ -45,7 +48,7 @@ namespace Mbeat.Rest
 
             if (_accessToken == string.Empty || timestamp - 60 > _accessTokenExpiration)
             {
-                var client = new RestClient(TokenEndpoint);
+                var client = CreateRestClient(TokenEndpoint);
                 var request = new RestRequest(Method.POST);
                 request.AddHeader("content-type", "application/x-www-form-urlencoded");
 
@@ -88,7 +91,7 @@ namespace Mbeat.Rest
                 return GetAccessTokenForRefreshToken(refreshToken);
             }
 
-            var client = new RestClient(TokenEndpoint);
+            var client = CreateRestClient(TokenEndpoint);
             var request = new RestRequest(Method.POST);
             request.AddHeader("content-type", "application/x-www-form-urlencoded");
 
@@ -141,7 +144,7 @@ namespace Mbeat.Rest
                 return _accessToken;
             }
 
-            var client = new RestClient(TokenEndpoint);
+            var client = CreateRestClient(TokenEndpoint);
             var request = new RestRequest(Method.POST);
 
             string data = string.Empty;
@@ -228,8 +231,34 @@ namespace Mbeat.Rest
 
         public MbeatRest(string baseUrl, AuthParams authParams)
         {
-            _restClient = new RestClient(baseUrl);
+            _baseUrl = baseUrl;
+            _restClient = CreateRestClient(_baseUrl);
             _authParams = authParams;
+        }
+
+        private IRestClient CreateRestClient(string baseUrl)
+        {
+            IRestClient restClient = new RestClient(baseUrl);
+            restClient.RemoteCertificateValidationCallback += (message, cert, chain, sslPolicyErrors) =>
+            {
+                var certificate = cert as X509Certificate2;
+                var request = message as HttpWebRequest;
+                string mbeatApiEndpoint = $"{_baseUrl.TrimEnd('/')}/";
+                if (request != null && certificate != null &&
+                    request.RequestUri.AbsoluteUri.Contains(mbeatApiEndpoint) &&
+                    sslPolicyErrors == SslPolicyErrors.RemoteCertificateNameMismatch)
+                {
+                    string commonName = certificate.GetNameInfo(X509NameType.SimpleName, false);
+                    if (commonName == "*.bmby.com")
+                    {
+                        return true;
+                    }
+                }
+
+                return sslPolicyErrors == SslPolicyErrors.None;
+            };
+
+            return restClient;
         }
     }
 }

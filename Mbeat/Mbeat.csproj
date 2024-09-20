@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <PackageId>MbeatAPI</PackageId>
-    <Version>1.0.6</Version>
+    <Version>1.0.7</Version>
     <Authors>Martin Boyakhchyan</Authors>
     <Company>BMBY Software Systems Ltd.</Company>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackOnBuild>true</PackOnBuild>
     <Owners>BMBY Software Systems Ltd.</Owners>
