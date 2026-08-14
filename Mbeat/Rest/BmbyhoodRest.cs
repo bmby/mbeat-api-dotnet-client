@@ -1,6 +1,5 @@
-﻿using System;
+﻿using RestSharp;
 using Mbeat.Entities;
-using RestSharp;
 
 namespace Mbeat.Rest
 {
@@ -33,6 +32,11 @@ namespace Mbeat.Rest
         public IRestResponse SetUserPassword(BmbyhoodUserPassword userPassword)
         {
             return Post("/bmbyhood/user-password-hash", userPassword);
+        }
+
+        public IRestResponse SetUser2FaEnabled(BmbyhoodUser2FaEnabled user2FaEnabled)
+        {
+            return Post("/bmbyhood/user-2fa-enabled", user2FaEnabled);
         }
     }
 }
